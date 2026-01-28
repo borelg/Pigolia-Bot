@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  baby-care-bot:
+    build: .
+    container_name: pigolia-bot-nap
+    restart: unless-stopped
+    network_mode: host
+    privileged: true
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN:-}
+      - AUTHORIZED_IDS=${AUTHORIZED_IDS:-}
+      - INFLUXDB_URL=http://host.docker.internal:8086
+      - INFLUXDB_TOKEN=${INFLUXDB_TOKEN:-}
+      - INFLUXDB_ORG=${INFLUXDB_ORG:-}
+      - INFLUXDB_BUCKET=${INFLUXDB_BUCKET:-}
+    volumes:
+      - baby-care-data:/app/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  baby-care-data:
