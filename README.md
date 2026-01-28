@@ -37,3 +37,15 @@ To get this bot up and running:
 ## License
 
 This project is open-source and licensed under the GPL-3.0 License. See the `LICENSE` file for more details.
+
+## Dashboard
+
+The data collected by the bot is stored in InfluxDB and visualized using Grafana. Here are some screenshots of the bot in action:
+
+### Telegram Bot
+
+![Telegram Bot](telegram_screen.png)
+
+### Grafana Dashboard
+
+![Grafana Dashboard](grafana_screen.png)
